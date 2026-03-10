@@ -1,0 +1,53 @@
+[root@crmserver ~]# # Datenbank-Logs last 50
+[root@crmserver ~]# tail -50 /var/log/mysqld.log
+InnoDB: Foreign key constraint system tables created
+260302 16:17:29  InnoDB: Started; log sequence number 0 0
+260302 16:17:29 [Note] Event Scheduler: Loaded 0 events
+260302 16:17:29 [Note] /usr/libexec/mysqld: ready for connections.
+Version: '5.1.73'  socket: '/var/lib/mysql/mysql.sock'  port: 3306  Source distribution
+260302 19:57:50 [Note] /usr/libexec/mysqld: Normal shutdown
+
+260302 19:57:50 [Note] Event Scheduler: Purging the queue. 0 events
+260302 19:57:50  InnoDB: Starting shutdown...
+260302 19:57:54  InnoDB: Shutdown completed; log sequence number 0 11648036
+260302 19:57:54 [Note] /usr/libexec/mysqld: Shutdown complete
+
+260302 19:57:54 mysqld_safe mysqld from pid file /var/run/mysqld/mysqld.pid ended
+260302 19:58:22 mysqld_safe Starting mysqld daemon with databases from /var/lib/mysql
+260302 19:58:23  InnoDB: Initializing buffer pool, size = 8.0M
+260302 19:58:23  InnoDB: Completed initialization of buffer pool
+260302 19:58:23  InnoDB: Started; log sequence number 0 11648036
+260302 19:58:23 [Note] Event Scheduler: Loaded 0 events
+260302 19:58:23 [Note] /usr/libexec/mysqld: ready for connections.
+Version: '5.1.73'  socket: '/var/lib/mysql/mysql.sock'  port: 3306  Source distribution
+260302 20:10:21 [Note] /usr/libexec/mysqld: Normal shutdown
+
+260302 20:10:21 [Note] Event Scheduler: Purging the queue. 0 events
+260302 20:10:21  InnoDB: Starting shutdown...
+260302 20:10:24  InnoDB: Shutdown completed; log sequence number 0 11648310
+260302 20:10:24 [Note] /usr/libexec/mysqld: Shutdown complete
+
+260302 20:10:24 mysqld_safe mysqld from pid file /var/run/mysqld/mysqld.pid ended
+260310 15:47:58 mysqld_safe Starting mysqld daemon with databases from /var/lib/mysql
+260310 15:47:58  InnoDB: Initializing buffer pool, size = 8.0M
+260310 15:47:58  InnoDB: Completed initialization of buffer pool
+260310 15:47:58  InnoDB: Started; log sequence number 0 11648310
+260310 15:47:58 [Note] Event Scheduler: Loaded 0 events
+260310 15:47:58 [Note] /usr/libexec/mysqld: ready for connections.
+Version: '5.1.73'  socket: '/var/lib/mysql/mysql.sock'  port: 3306  Source distribution
+260310 15:55:41 [Note] /usr/libexec/mysqld: Normal shutdown
+
+260310 15:55:41 [Note] Event Scheduler: Purging the queue. 0 events
+260310 15:55:41  InnoDB: Starting shutdown...
+260310 15:55:44  InnoDB: Shutdown completed; log sequence number 0 11648310
+260310 15:55:44 [Note] /usr/libexec/mysqld: Shutdown complete
+
+260310 15:55:44 mysqld_safe mysqld from pid file /var/run/mysqld/mysqld.pid ended
+260310 15:57:04 mysqld_safe Starting mysqld daemon with databases from /var/lib/mysql
+260310 15:57:04  InnoDB: Initializing buffer pool, size = 8.0M
+260310 15:57:04  InnoDB: Completed initialization of buffer pool
+260310 15:57:05  InnoDB: Started; log sequence number 0 11648310
+260310 15:57:05 [Note] Event Scheduler: Loaded 0 events
+260310 15:57:05 [Note] /usr/libexec/mysqld: ready for connections.
+Version: '5.1.73'  socket: '/var/lib/mysql/mysql.sock'  port: 3306  Source distribution
+[root@crmserver ~]#
