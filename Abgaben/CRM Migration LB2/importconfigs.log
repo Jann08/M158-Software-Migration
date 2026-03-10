@@ -1,0 +1,69 @@
+[root@crmserver ~]# # Netzwerk
+[root@crmserver ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth0  # (Name anpassen)
+DEVICE=eth0
+HWADDR=08:00:27:83:76:5E
+TYPE=Ethernet
+UUID=85946e5b-4d2f-48c7-a5db-3533de207fd6
+ONBOOT=yes
+NM_CONTROLLED=yes
+BOOTPROTO=static
+IPADDR=10.0.2.10
+NETMASK=255.255.255.0
+GATEWAY=10.0.2.2
+[root@crmserver ~]#
+[root@crmserver ~]# # Firewall-Regeln (CentOS 6)
+[root@crmserver ~]# iptables -L -n -v
+Chain INPUT (policy ACCEPT 172 packets, 16752 bytes)
+ pkts bytes target     prot opt in     out     source               destination
+
+Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination
+
+Chain OUTPUT (policy ACCEPT 159 packets, 38588 bytes)
+ pkts bytes target     prot opt in     out     source               destination
+[root@crmserver ~]# cat /etc/sysconfig/iptables
+# Firewall configuration written by system-config-firewall
+# Manual customization of this file is not recommended.
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+-P OUTPUT ACCEPT
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+-A INPUT -p icmp -j ACCEPT
+-A INPUT -i lo -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
+-A INPUT -j REJECT --reject-with icmp-host-prohibited
+-A FORWARD -j REJECT --reject-with icmp-host-prohibited
+-A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 8181 -j ACCEPT
+-A OUTPUT -p tcp -d 127.0.0.1 --dport 8181 -j ACCEPT
+-A OUTPUT -p tcp -d 10.0.2.2 --dport 8181 -j ACCEPT
+-F
+-P OUTPUT ACCEPT
+COMMIT
+[root@crmserver ~]#
+[root@crmserver ~]# # Hosts-Datei
+[root@crmserver ~]# cat /etc/hosts
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+10.0.2.10   crmserver crmserver.sample.ch
+[root@crmserver ~]#
+[root@crmserver ~]# # Automatisch gemountete Laufwerke
+[root@crmserver ~]# cat /etc/fstab
+
+#
+# /etc/fstab
+# Created by anaconda on Mon Mar  2 14:59:17 2026
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#
+/dev/mapper/vg_crmserver-lv_root /                       ext4    defaults        1 1
+UUID=f00d6b62-9d13-4b59-93f8-5be047a703a6 /boot                   ext4    defaults        1 2
+/dev/mapper/vg_crmserver-lv_swap swap                    swap    defaults        0 0
+tmpfs                   /dev/shm                tmpfs   defaults        0 0
+devpts                  /dev/pts                devpts  gid=5,mode=620  0 0
+sysfs                   /sys                    sysfs   defaults        0 0
+proc                    /proc                   proc    defaults        0 0
+[root@crmserver ~]#
