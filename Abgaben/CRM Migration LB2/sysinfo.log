@@ -1,0 +1,51 @@
+[root@crmserver ~]# # Betriebssystem, Kernel und Architektur (zeigt CentOS 6.6)
+[root@crmserver ~]# cat /etc/redhat-release
+CentOS release 6.6 (Final)
+[root@crmserver ~]# uname -a
+Linux crmserver.sample.ch 2.6.32-504.el6.x86_64 #1 SMP Wed Oct 15 04:27:16 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+[root@crmserver ~]#
+[root@crmserver ~]# # CPU-Informationen (Anzahl Kerne, Modell)
+[root@crmserver ~]# lscpu
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                2
+On-line CPU(s) list:   0,1
+Thread(s) per core:    1
+Core(s) per socket:    2
+Socket(s):             1
+NUMA node(s):          1
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 186
+Stepping:              2
+CPU MHz:               2188.808
+BogoMIPS:              4377.61
+Hypervisor vendor:     KVM
+Virtualization type:   full
+L1d cache:             48K
+L1i cache:             32K
+L2 cache:              1280K
+L3 cache:              24576K
+NUMA node0 CPU(s):     0,1
+[root@crmserver ~]# cat /proc/cpuinfo | grep "model name" | head -1
+model name      : 13th Gen Intel(R) Core(TM) i7-1370P
+[root@crmserver ~]#
+[root@crmserver ~]# # Arbeitsspeicher (Gesamt, belegt, frei)
+[root@crmserver ~]# free -m
+             total       used       free     shared    buffers     cached
+Mem:          1956        270       1685          0         12         86
+-/+ buffers/cache:        170       1785
+Swap:         3151          0       3151
+[root@crmserver ~]#
+[root@crmserver ~]# # Festplatten und Partitionen
+[root@crmserver ~]# df -h
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/vg_crmserver-lv_root
+                       27G  2.3G   24G  10% /
+tmpfs                 979M     0  979M   0% /dev/shm
+/dev/sda1             477M   33M  419M   8% /boot
+[root@crmserver ~]# fdisk -l | grep "Disk /dev"
+Disk /dev/sda: 33.1 GB, 33056112640 bytes
+Disk /dev/mapper/vg_crmserver-lv_root: 29.2 GB, 29221715968 bytes
+Disk /dev/mapper/vg_crmserver-lv_swap: 3305 MB, 3305111552 bytes
