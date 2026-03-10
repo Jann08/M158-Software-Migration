@@ -1,0 +1,102 @@
+[root@crmserver ~]# # Letzte Systemmeldungen last 100
+[root@crmserver ~]# tail -100 /var/log/messages
+Mar 10 15:56:50 crmserver kernel: cpuidle: using governor ladder
+Mar 10 15:56:50 crmserver kernel: cpuidle: using governor menu
+Mar 10 15:56:50 crmserver kernel: EFI Variables Facility v0.08 2004-May-17
+Mar 10 15:56:50 crmserver kernel: usbcore: registered new interface driver hiddev
+Mar 10 15:56:50 crmserver kernel: usbcore: registered new interface driver usbhid
+Mar 10 15:56:50 crmserver kernel: usbhid: v2.6:USB HID core driver
+Mar 10 15:56:50 crmserver kernel: GRE over IPv4 demultiplexor driver
+Mar 10 15:56:50 crmserver kernel: TCP cubic registered
+Mar 10 15:56:50 crmserver kernel: Initializing XFRM netlink socket
+Mar 10 15:56:50 crmserver kernel: NET: Registered protocol family 17
+Mar 10 15:56:50 crmserver kernel: registered taskstats version 1
+Mar 10 15:56:50 crmserver kernel: rtc_cmos rtc_cmos: setting system clock to 2026-03-10 14:56:38 UTC (1773154598)
+Mar 10 15:56:50 crmserver kernel: Initalizing network drop monitor service
+Mar 10 15:56:50 crmserver kernel: Freeing unused kernel memory: 1292k freed
+Mar 10 15:56:50 crmserver kernel: Write protecting the kernel read-only data: 10240k
+Mar 10 15:56:50 crmserver kernel: Freeing unused kernel memory: 788k freed
+Mar 10 15:56:50 crmserver kernel: Freeing unused kernel memory: 1568k freed
+Mar 10 15:56:50 crmserver kernel: dracut: dracut-004-356.el6
+Mar 10 15:56:50 crmserver kernel: dracut: rd_NO_LUKS: removing cryptoluks activation
+Mar 10 15:56:50 crmserver kernel: input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input4
+Mar 10 15:56:50 crmserver kernel: device-mapper: uevent: version 1.0.3
+Mar 10 15:56:50 crmserver kernel: device-mapper: ioctl: 4.27.0-ioctl (2013-10-30) initialised: dm-devel@redhat.com
+Mar 10 15:56:50 crmserver kernel: udev: starting version 147
+Mar 10 15:56:50 crmserver kernel: dracut: Starting plymouth daemon
+Mar 10 15:56:50 crmserver kernel: dracut: rd_NO_DM: removing DM RAID activation
+Mar 10 15:56:50 crmserver kernel: dracut: rd_NO_MD: removing MD RAID activation
+Mar 10 15:56:50 crmserver kernel: scsi0 : ata_piix
+Mar 10 15:56:50 crmserver kernel: scsi1 : ata_piix
+Mar 10 15:56:50 crmserver kernel: ata1: PATA max UDMA/33 cmd 0x1f0 ctl 0x3f6 bmdma 0xd000 irq 14
+Mar 10 15:56:50 crmserver kernel: ata2: PATA max UDMA/33 cmd 0x170 ctl 0x376 bmdma 0xd008 irq 15
+Mar 10 15:56:50 crmserver kernel: ata1.00: ATAPI: VBOX CD-ROM, 1.0, max UDMA/133
+Mar 10 15:56:50 crmserver kernel: ata1.00: configured for UDMA/33
+Mar 10 15:56:50 crmserver kernel: scsi 0:0:0:0: CD-ROM            VBOX     CD-ROM           1.0  PQ: 0 ANSI: 5
+Mar 10 15:56:50 crmserver kernel: ahci 0000:00:0d.0: PCI INT A -> GSI 21 (level, low) -> IRQ 21
+Mar 10 15:56:50 crmserver kernel: ahci: SSS flag set, parallel bus scan disabled
+Mar 10 15:56:50 crmserver kernel: ahci 0000:00:0d.0: AHCI 0001.0100 32 slots 1 ports 3 Gbps 0x1 impl SATA mode
+Mar 10 15:56:50 crmserver kernel: ahci 0000:00:0d.0: flags: 64bit ncq stag only ccc
+Mar 10 15:56:50 crmserver kernel: scsi2 : ahci
+Mar 10 15:56:50 crmserver kernel: ata3: SATA max UDMA/133 abar m8192@0xf0806000 port 0xf0806100 irq 21
+Mar 10 15:56:50 crmserver kernel: ata3: SATA link up 3.0 Gbps (SStatus 123 SControl 300)
+Mar 10 15:56:50 crmserver kernel: ata3.00: ATA-6: VBOX HARDDISK, 1.0, max UDMA/133
+Mar 10 15:56:50 crmserver kernel: ata3.00: 64562720 sectors, multi 128: LBA48 NCQ (depth 31/32)
+Mar 10 15:56:50 crmserver kernel: ata3.00: configured for UDMA/133
+Mar 10 15:56:50 crmserver kernel: scsi 2:0:0:0: Direct-Access     ATA      VBOX HARDDISK    1.0  PQ: 0 ANSI: 5
+Mar 10 15:56:50 crmserver kernel: input: Video Bus as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/LNXVIDEO:00/input/input5
+Mar 10 15:56:50 crmserver kernel: ACPI: Video Device [GFX0] (multi-head: yes  rom: no  post: no)
+Mar 10 15:56:50 crmserver kernel: sr0: scsi3-mmc drive: 32x/32x xa/form2 tray
+Mar 10 15:56:50 crmserver kernel: Uniform CD-ROM driver Revision: 3.20
+Mar 10 15:56:50 crmserver kernel: STARTING CRC_T10DIF
+Mar 10 15:56:50 crmserver kernel: sd 2:0:0:0: [sda] 64562720 512-byte logical blocks: (33.0 GB/30.7 GiB)
+Mar 10 15:56:50 crmserver kernel: sd 2:0:0:0: [sda] Write Protect is off
+Mar 10 15:56:50 crmserver kernel: sd 2:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+Mar 10 15:56:50 crmserver kernel: sda: sda1 sda2
+Mar 10 15:56:50 crmserver kernel: sd 2:0:0:0: [sda] Attached SCSI disk
+Mar 10 15:56:50 crmserver kernel: dracut: Scanning devices sda2  for LVM logical volumes vg_crmserver/lv_root vg_crmserver/lv_swap
+Mar 10 15:56:50 crmserver kernel: dracut: inactive '/dev/vg_crmserver/lv_root' [27.21 GiB] inherit
+Mar 10 15:56:50 crmserver kernel: dracut: inactive '/dev/vg_crmserver/lv_swap' [3.08 GiB] inherit
+Mar 10 15:56:50 crmserver kernel: EXT4-fs (dm-0): mounted filesystem with ordered data mode. Opts:
+Mar 10 15:56:50 crmserver kernel: dracut: Mounted root filesystem /dev/mapper/vg_crmserver-lv_root
+Mar 10 15:56:50 crmserver kernel: dracut: Loading SELinux policy
+Mar 10 15:56:50 crmserver kernel: type=1404 audit(1773154600.976:2): enforcing=1 old_enforcing=0 auid=4294967295 ses=4294967295
+Mar 10 15:56:50 crmserver kernel: type=1403 audit(1773154601.709:3): policy loaded auid=4294967295 ses=4294967295
+Mar 10 15:56:50 crmserver kernel: dracut:
+Mar 10 15:56:50 crmserver kernel: dracut: Switching root
+Mar 10 15:56:50 crmserver kernel: udev: starting version 147
+Mar 10 15:56:50 crmserver kernel: sr 0:0:0:0: Attached scsi generic sg0 type 5
+Mar 10 15:56:50 crmserver kernel: sd 2:0:0:0: Attached scsi generic sg1 type 0
+Mar 10 15:56:50 crmserver kernel: e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
+Mar 10 15:56:50 crmserver kernel: e1000: Copyright (c) 1999-2006 Intel Corporation.
+Mar 10 15:56:50 crmserver kernel: e1000 0000:00:03.0: PCI INT A -> GSI 19 (level, low) -> IRQ 19
+Mar 10 15:56:50 crmserver kernel: e1000 0000:00:03.0: eth0: (PCI:33MHz:32-bit) 08:00:27:83:76:5e
+Mar 10 15:56:50 crmserver kernel: e1000 0000:00:03.0: eth0: Intel(R) PRO/1000 Network Connection
+Mar 10 15:56:50 crmserver kernel: Intel ICH 0000:00:05.0: PCI INT A -> GSI 21 (level, low) -> IRQ 21
+Mar 10 15:56:50 crmserver kernel: intel8x0: white list rate for 1028:0177 is 48000
+Mar 10 15:56:50 crmserver kernel: piix4_smbus 0000:00:07.0: SMBus Host Controller at 0x4100, revision 0
+Mar 10 15:56:50 crmserver kernel: microcode: CPU0 sig=0xb06a2, pf=0x1, revision=0xffffffff
+Mar 10 15:56:50 crmserver kernel: platform microcode: firmware: requesting intel-ucode/06-ba-02
+Mar 10 15:56:50 crmserver kernel: microcode: CPU1 sig=0xb06a2, pf=0x1, revision=0xffffffff
+Mar 10 15:56:50 crmserver kernel: platform microcode: firmware: requesting intel-ucode/06-ba-02
+Mar 10 15:56:50 crmserver kernel: Microcode Update Driver: v2.00 <tigran@aivazian.fsnet.co.uk>, Peter Oruba
+Mar 10 15:56:50 crmserver kernel: EXT4-fs (sda1): mounted filesystem with ordered data mode. Opts:
+Mar 10 15:56:50 crmserver kernel: Adding 3227644k swap on /dev/mapper/vg_crmserver-lv_swap.  Priority:-1 extents:1 across:3227644k
+Mar 10 15:56:50 crmserver kernel: NET: Registered protocol family 10
+Mar 10 15:56:50 crmserver kernel: lo: Disabled Privacy Extensions
+Mar 10 15:56:50 crmserver kernel: ip6_tables: (C) 2000-2006 Netfilter Core Team
+Mar 10 15:56:50 crmserver kernel: nf_conntrack version 0.5.0 (16384 buckets, 65536 max)
+Mar 10 15:56:50 crmserver kernel: ip_tables: (C) 2000-2006 Netfilter Core Team
+Mar 10 15:56:50 crmserver kernel: e1000: eth0 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+Mar 10 15:56:50 crmserver kernel: type=1305 audit(1773154610.188:4): audit_pid=923 old=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:auditd_t:s0 res=1
+Mar 10 15:56:51 crmserver rpc.statd[1020]: Version 1.2.3 starting
+Mar 10 15:56:51 crmserver sm-notify[1021]: Version 1.2.3 starting
+Mar 10 15:56:52 crmserver kdump: kexec: loaded kdump kernel
+Mar 10 15:56:52 crmserver kdump: started up
+Mar 10 15:56:56 crmserver acpid: starting up
+Mar 10 15:56:56 crmserver acpid: 1 rule loaded
+Mar 10 15:56:56 crmserver acpid: waiting for events: event logging is off
+Mar 10 15:56:58 crmserver acpid: client connected from 1252[68:68]
+Mar 10 15:56:58 crmserver acpid: 1 client rule loaded
+Mar 10 15:57:01 crmserver automount[1273]: lookup_read_master: lookup(nisplus): couldn't locate nis+ table auto.master
+Mar 10 15:57:13 crmserver abrtd: Init complete, entering main loop
