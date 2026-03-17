@@ -765,16 +765,6 @@ tomcat6-lib-6.0.24-80.el6.x86_64
 [root@crmserver ~]#
 [root@crmserver ~]# # Yum-Repositories, die konfiguriert sind
 [root@crmserver ~]# yum repolist
-Loaded plugins: fastestmirror, security
-Loading mirror speeds from cached hostfile
-Could not retrieve mirrorlist http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=os&infra=stock error was
-14: PYCURL ERROR 6 - "Couldn't resolve host 'mirrorlist.centos.org'"
-file:///mnt/cdrom/repodata/repomd.xml: [Errno 14] Could not open/read file:///mnt/cdrom/repodata/repomd.xml
-Trying other mirror.
-Could not retrieve mirrorlist http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=extras&infra=stock error was
-14: PYCURL ERROR 6 - "Couldn't resolve host 'mirrorlist.centos.org'"
-Could not retrieve mirrorlist http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=updates&infra=stock error was
-14: PYCURL ERROR 6 - "Couldn't resolve host 'mirrorlist.centos.org'"
 repo id                                             repo name                                                     status
 base                                                CentOS-6 - Base                                                   0
 c6-media                                            CentOS-6 - Media                                              6,518
