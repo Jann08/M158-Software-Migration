@@ -2,7 +2,7 @@
 
 **Projekt:** CRM-Migration
 **Datum:** 17.03.2026  
-**Version:** 1.0
+**Version:** 1.1
 
 ## Risikomatrix
 
@@ -89,9 +89,9 @@
 | **Erkennung** | Website/SSH nicht erreichbar |
 
 **Massnahmen:**
-- ✅ Firewall-Regeln vorab dokumentieren (aus IST-System)
-- ✅ Checkliste für benötigte Ports (22, 80, 443, 3306)
-- ✅ Nach Deployment: Port-Scan durchführen
+- Firewall-Regeln vorab dokumentieren (aus IST-System)
+- Checkliste für benötigte Ports (22, 80, 443, 3306)
+- Nach Deployment: Port-Scan durchführen
 
 **Verantwortlich:** Administrator  
 **Deadline:** Nach Installation
@@ -109,10 +109,10 @@
 | **Erkennung** | Restore-Prozess bricht ab |
 
 **Massnahmen:**
-- ✅ Backup-Restore vorab in Testumgebung testen
-- ✅ Backup-Skript dokumentieren
-- ✅ Integritätsprüfung der Backup-Dateien
-- ✅ Zwei verschiedene Backup-Methoden (Dump + Dateisystem)
+- Backup-Restore vorab in Testumgebung testen
+- Backup-Skript dokumentieren
+- Integritätsprüfung der Backup-Dateien
+- Zwei verschiedene Backup-Methoden (Dump + Dateisystem)
 
 **Verantwortlich:** Administrator  
 **Deadline:** Vor Go-Live
@@ -134,12 +134,12 @@
 
 Die Migration wird abgebrochen und ein Rollback durchgeführt bei:
 
-1. ❌ Datenverlust von > 10 Datensätzen
-2. ❌ Ausfallzeit > 6 Stunden
-3. ❌ Kritische CRM-Funktionen arbeiten nicht
-4. ❌ Sicherheitslücken im neuen System
+1. Datenverlust von > 10 Datensätzen
+2. Ausfallzeit > 6 Stunden
+3. Kritische CRM-Funktionen arbeiten nicht
+4. Sicherheitslücken im neuen System
 
-## Rollback-Plan (Kurzform)
+## Rollback-Plan
 
 1. DNS auf altes System zurücksetzen (TTL beachten!)
 2. Alte VM wieder starten
