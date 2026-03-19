@@ -25,10 +25,10 @@
 | **Erkennung** | Nach DB-Import: Prüfung der Datensatzanzahl, Stichproben |
 
 **Massnahmen:**
-- ✅ Mindestens 3 unabhängige Backups vor Migration
-- ✅ Backup-Restore vorab in Testumgebung üben
-- ✅ Export als SQL-Dump mit Daten-Prüfsumme
-- ✅ Nach Import: Automatischer Vergleich der Datensatzanzahl pro Tabelle
+- Mindestens 3 unabhängige Backups vor Migration
+- Backup-Restore vorab in Testumgebung üben
+- Export als SQL-Dump mit Daten-Prüfsumme
+- Nach Import: Automatischer Vergleich der Datensatzanzahl pro Tabelle
 
 **Verantwortlich:** Administrator  
 **Deadline:** Vor Migrationsbeginn
@@ -46,10 +46,10 @@
 | **Erkennung** | CRM startet nicht oder zeigt Fehler |
 
 **Massnahmen:**
-- ✅ Vtiger-Dokumentation prüfen (min. PHP-Version)
-- ✅ Vtiger-Upgrade auf neueste Version vor Migration
-- ✅ Testumgebung mit identischer Konfiguration
-- ✅ Falls nötig: PHP 7.4 als Alternative bereithalten
+- Vtiger-Dokumentation prüfen (min. PHP-Version)
+- Vtiger-Upgrade auf neueste Version vor Migration
+- Testumgebung mit identischer Konfiguration
+- Falls nötig: PHP 7.4 als Alternative bereithalten
 
 **Verantwortlich:** Administrator  
 **Deadline:** Vor Testmigration
@@ -67,11 +67,11 @@
 | **Erkennung** | Zeitplan wird überschritten |
 
 **Massnahmen:**
-- ✅ Detaillierter Zeitplan mit Puffer (2h extra)
-- ✅ Alle Schritte vorab in Testumgebung geübt
-- ✅ Klare Abbruchkriterien definieren
-- ✅ Rollback-Plan vorbereitet
-- ✅ Kommunikation an Kunde: Wartungsfenster grosszügig ansetzen
+- Detaillierter Zeitplan mit Puffer (2h extra)
+- Alle Schritte vorab in Testumgebung geübt
+- Klare Abbruchkriterien definieren
+- Rollback-Plan vorbereitet
+- Kommunikation an Kunde: Wartungsfenster grosszügig ansetzen
 
 **Verantwortlich:** Projektleiter  
 **Deadline:** Vor Go-Live
