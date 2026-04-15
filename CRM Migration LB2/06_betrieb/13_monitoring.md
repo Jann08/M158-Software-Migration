@@ -23,7 +23,7 @@ sudo nano /usr/local/bin/vtiger_monitor.sh
 
 LOG="/var/log/vtiger_monitor.log"
 MAIL_TO="admin@example.ch"
-DB_HOST="192.168.42.134"
+DB_HOST="10.10.20.11"
 DB_USER="vtigeruser"
 DB_PASS=""
 DB_NAME="vtiger"

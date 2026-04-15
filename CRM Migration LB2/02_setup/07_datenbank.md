@@ -56,9 +56,9 @@ sudo mysql -u root -p
 ```sql
 CREATE DATABASE vtiger CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-CREATE USER 'vtigeruser'@'192.168.42.135' IDENTIFIED BY 'V7!gSecure#2026';
+CREATE USER 'vtigeruser'@'10.10.20.10' IDENTIFIED BY 'V7!gSecure#2026';
 
-GRANT ALL PRIVILEGES ON vtiger.* TO 'vtigeruser'@'192.168.42.135';
+GRANT ALL PRIVILEGES ON vtiger.* TO 'vtigeruser'@'10.10.20.10';
 
 FLUSH PRIVILEGES;
 
@@ -69,7 +69,7 @@ Benutzer prüfen:
 
 ```sql
 SELECT user, host FROM mysql.user;
--- vtigeruser | 192.168.42.135
+-- vtigeruser | 10.10.20.10
 -- root       | localhost
 ```
 
@@ -80,8 +80,8 @@ SELECT user, host FROM mysql.user;
 Beim Test der Verbindung vom Webserver aus:
 
 ```bash
-mysql -h 192.168.42.134 -u vtigeruser -p vtiger
-# ERROR 2003 (HY000): Can't connect to MySQL server on '192.168.42.134'
+mysql -h 10.10.20.11 -u vtigeruser -p vtiger
+# ERROR 2003 (HY000): Can't connect to MySQL server on '10.10.20.11'
 ```
 
 **Ursache prüfen:**
@@ -111,7 +111,7 @@ sudo systemctl restart mariadb
 Erneuter Test:
 
 ```bash
-mysql -h 192.168.42.134 -u vtigeruser -p vtiger
+mysql -h 10.10.20.11 -u vtigeruser -p vtiger
 # Welcome to the MariaDB monitor.
 ```
 
@@ -123,7 +123,7 @@ Zugriff auf Port 3306 nur vom Webserver erlauben:
 
 ```bash
 sudo ufw allow OpenSSH
-sudo ufw allow from 192.168.42.135 to any port 3306
+sudo ufw allow from 10.10.20.10 to any port 3306
 sudo ufw enable
 ```
 
@@ -133,7 +133,7 @@ Status prüfen:
 sudo ufw status
 # Status: active
 # 22/tcp                 ALLOW IN    Anywhere
-# 3306                   ALLOW IN    192.168.42.135
+# 3306                   ALLOW IN    10.10.20.10
 ```
 
 ---

@@ -24,8 +24,8 @@ Einträge hinzufügen:
 ```text
 127.0.0.1       localhost
 127.0.1.1       crmweb
-192.168.42.135  crm.local
-192.168.42.134  crm-db.local
+10.10.20.10     crm.local
+10.10.20.11     crm-db.local
 ```
 
 ### Auf dem Datenbankserver (`crm-db`)
@@ -37,8 +37,8 @@ sudo nano /etc/hosts
 ```text
 127.0.0.1       localhost
 127.0.1.1       crm-db
-192.168.42.135  crm.local
-192.168.42.134  crm-db.local
+10.10.20.10     crm.local
+10.10.20.11     crm-db.local
 ```
 
 ### Auf dem Host-PC (Windows)
@@ -52,8 +52,8 @@ C:\Windows\System32\drivers\etc\hosts
 Datei mit Administratorrechten öffnen und eintragen:
 
 ```text
-192.168.42.135  crm.local
-192.168.42.134  crm-db.local
+10.10.20.10     crm.local
+10.10.20.11     crm-db.local
 ```
 
 DNS-Cache leeren, damit die Änderungen sofort greifen:
@@ -70,14 +70,14 @@ ipconfig /flushdns
 
 ```bash
 ping -c 3 crm.local
-# PING crm.local (192.168.42.135): 56 bytes from 192.168.42.135
+# PING crm.local (10.10.20.10): 56 bytes from 10.10.20.10
 ```
 
 **Ping auf crm-db.local vom Webserver:**
 
 ```bash
 ping -c 3 crm-db.local
-# PING crm-db.local (192.168.42.134): 56 bytes from 192.168.42.134
+# PING crm-db.local (10.10.20.11): 56 bytes from 10.10.20.11
 ```
 
 **Aufruf im Browser (vom Host):**

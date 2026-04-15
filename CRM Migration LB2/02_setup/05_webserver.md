@@ -139,8 +139,8 @@ sudo a2enmod proxy proxy_http proxy_balancer lbmethod_byrequests
 
 ```apache
 <Proxy "balancer://vtigercluster">
-    BalancerMember "http://192.168.42.135"
-    BalancerMember "http://192.168.42.136"
+    BalancerMember "http://10.10.20.10"
+    BalancerMember "http://10.10.20.12"
     ProxySet lbmethod=byrequests
 </Proxy>
 

@@ -35,7 +35,7 @@ set -e
 
 DATUM=$(date +%Y%m%d_%H%M)
 BACKUP_BASE="/var/backups/vtiger"
-DB_HOST="192.168.42.134"
+DB_HOST="10.10.20.11"
 DB_USER="vtigeruser"
 DB_PASS=""
 DB_NAME="vtiger"
@@ -134,7 +134,7 @@ Datenbank wiederherstellen:
 
 ```bash
 gunzip -c /var/backups/vtiger/db/vtiger_db_20260310_1745.sql.gz | \
-  mysql -h 192.168.42.134 -u vtigeruser -p vtiger
+  mysql -h 10.10.20.11 -u vtigeruser -p vtiger
 ```
 
 Dateien wiederherstellen:

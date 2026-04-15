@@ -23,7 +23,7 @@ Beide VMs wurden in VMware Workstation erstellt.
 | Disk | 30 GB | 30 GB |
 | Adapter 1 | NAT (Internet) | NAT (Internet) |
 | Adapter 2 | Host-only (intern) | Host-only (intern) |
-| Interne IP | `192.168.42.135` | `192.168.42.134` |
+| Interne IP | `10.10.20.10` | `10.10.20.11` |
 
 ---
 
@@ -126,14 +126,13 @@ sudo systemctl start ssh
 **Verbindungstest vom Host:**
 
 ```bash
-ssh administrator@192.168.42.135
-ssh administrator@192.168.42.134
+ssh administrator@10.10.20.10
+ssh administrator@10.10.20.11
 ```
 
 Ab dann wurde die gesamte Konfiguration per SSH vorgenommen – keine Copy/Paste-Probleme mehr durch das VM-Terminal.
 
 ---
-
 
 ## Snapshot-Strategie
 
@@ -155,8 +154,8 @@ Snapshots wurden über VMware Workstation erstellt: `VM → Snapshot → Take Sn
 Vom Webserver aus wurde die Erreichbarkeit des Datenbankservers getestet:
 
 ```bash
-ping -c 3 192.168.42.134
-# 64 bytes from 192.168.42.134: icmp_seq=1 ttl=64 time=0.42 ms
+ping -c 3 10.10.20.11
+# 64 bytes from 10.10.20.11: icmp_seq=1 ttl=64 time=0.42 ms
 ```
 
 Verbindung steht. Damit ist die Basis für den nächsten Schritt (MariaDB-Installation und Verbindung) gegeben.
@@ -165,7 +164,7 @@ Verbindung steht. Damit ist die Basis für den nächsten Schritt (MariaDB-Instal
 
 ## Problem: Webserver und DB in unterschiedlichen Netzen
 
-In einem ersten Versuch war der Webserver im Netz `172.x.x.x` und die DB im Netz `192.168.x.x`, weil die Host-only Adapter unterschiedlich konfiguriert waren.
+In einem ersten Versuch war der Webserver im Netz `172.x.x.x` und die DB im Netz `10.x.x.x`, weil die Host-only Adapter unterschiedlich konfiguriert waren.
 
 **Ursache:** In VMware war für beide VMs ein anderes virtuelles Netzwerk ausgewählt.
 

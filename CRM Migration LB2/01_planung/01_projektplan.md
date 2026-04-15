@@ -2,7 +2,7 @@
 
 **Projekt:** Migration vtigerCRM  
 **Datum:** 03.03.2026  
-**Version:** 1.0  
+**Version:** 6.0  
 **Autor:** Jann Neururer
 
 ---

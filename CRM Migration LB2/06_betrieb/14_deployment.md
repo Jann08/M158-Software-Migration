@@ -171,8 +171,8 @@ systemctl restart mariadb
 # Datenbank und User erstellen
 mysql -u root << 'EOSQL'
 CREATE DATABASE IF NOT EXISTS vtiger CHARACTER SET utf8 COLLATE utf8_general_ci;
-CREATE USER IF NOT EXISTS 'vtigeruser'@'192.168.42.135' IDENTIFIED BY 'V7!gSecure#2026';
-GRANT ALL PRIVILEGES ON vtiger.* TO 'vtigeruser'@'192.168.42.135';
+CREATE USER IF NOT EXISTS 'vtigeruser'@'10.10.20.10' IDENTIFIED BY 'V7!gSecure#2026';
+GRANT ALL PRIVILEGES ON vtiger.* TO 'vtigeruser'@'10.10.20.10';
 DROP DATABASE IF EXISTS test;
 DELETE FROM mysql.user WHERE User='';
 FLUSH PRIVILEGES;
@@ -180,7 +180,7 @@ EOSQL
 
 # Firewall
 ufw allow OpenSSH
-ufw allow from 192.168.42.135 to any port 3306
+ufw allow from 10.10.20.10 to any port 3306
 ufw --force enable
 
 echo "=== MariaDB Deployment abgeschlossen ==="

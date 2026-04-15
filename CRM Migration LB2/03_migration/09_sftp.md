@@ -57,9 +57,8 @@ scp -O -P 2222 \
   -o HostKeyAlgorithms=+ssh-rsa \
   -o PubkeyAcceptedAlgorithms=+ssh-rsa \
   root@localhost:/var/www/html/vtigercrm \
-  administrator@192.168.42.135:/tmp/
+  administrator@10.10.20.10:/tmp/
 ```
-
 
 **Alternative** (Transfer vom neuen System aus initiieren):
 
@@ -81,7 +80,7 @@ Für mehrfache Übertragungen (z.B. Testing, dann finale Migration) wurde `rsync
 rsync -avz --delete \
   -e "ssh -p 2222 -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedAlgorithms=+ssh-rsa" \
   root@localhost:/var/www/html/vtigercrm/ \
-  administrator@192.168.42.135:/tmp/vtigercrm/
+  administrator@10.10.20.10:/tmp/vtigercrm/
 ```
 
 Ausgabe (Auszug):

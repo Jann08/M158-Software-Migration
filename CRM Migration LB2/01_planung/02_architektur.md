@@ -149,16 +149,16 @@ Das neue System trennt Web- und Datenbankserver auf zwei separate VMs. Das erhö
 
 | Komponente | Hostname | IP-Adresse | Rolle |
 |------------|----------|------------|-------|
-| Webserver | `crmweb` | `192.168.42.135` | Apache, PHP 5.6, vtigerCRM 6.1 |
-| Datenbankserver | `crm-db` | `192.168.42.134` | MariaDB (aktuell) |
+| Webserver | `crmweb` | `10.10.20.10` | Apache, PHP 5.6, vtigerCRM 6.1 |
+| Datenbankserver | `crm-db` | `10.10.20.11` | MariaDB (aktuell) |
 
 **Netzwerk:**
-- Host-only Netzwerk für interne Kommunikation (Web ↔ DB)
+- Host-only Netzwerk für interne Kommunikation (Web ↔ DB): `10.10.20.0/24`
 - NAT-Interface für Internetzugang (Updates, Downloads)
 
 **DNS/Hosts:**
-- `crm.local` → `192.168.42.135`
-- `crm-db.local` → `192.168.42.134`
+- `crm.local` → `10.10.20.10`
+- `crm-db.local` → `10.10.20.11`
 
 ### Software SOLL
 
@@ -168,7 +168,7 @@ Das neue System trennt Web- und Datenbankserver auf zwei separate VMs. Das erhö
 | Apache | 2.4.x (aktuell) | Sicherheitsupdates, aktiv gewartet |
 | PHP | 5.6 (kompatibel mit Vtiger 6.1) | Kompatibilitätsanforderung |
 | MariaDB | 10.6.x | Drop-in-Ersatz für MySQL, aktiv |
-| vtigerCRM | 6.1 | letzte vollständig freie Version |
+| vtigerCRM | 6.1 → schrittweise auf aktuelle Version | letzte vollständig freie Version als Startpunkt |
 
 ---
 
@@ -176,11 +176,11 @@ Das neue System trennt Web- und Datenbankserver auf zwei separate VMs. Das erhö
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                   Host (VMware)               │
+│                   Host (VMware)                          │
 │                                                          │
 │  ┌─────────────────────────┐  ┌────────────────────────┐ │
 │  │   VM: crmweb            │  │   VM: crm-db           │ │
-│  │   IP: 192.168.42.135    │  │   IP: 192.168.42.134   │ │
+│  │   IP: 10.10.20.10       │  │   IP: 10.10.20.11      │ │
 │  │   OS: Ubuntu 22.04      │  │   OS: Ubuntu 22.04     │ │
 │  │                         │  │                        │ │
 │  │  ┌─────────────────┐    │  │  ┌──────────────────┐  │ │
@@ -190,13 +190,13 @@ Das neue System trennt Web- und Datenbankserver auf zwei separate VMs. Das erhö
 │  │           │             │  │  └──────────────────┘  │ │
 │  │  ┌────────▼────────┐    │  │                        │ │
 │  │  │ vtigerCRM 6.1   │────┼──┼──► DB-Verbindung      │ │
-│  │  │ PHP 5.6         │    │  │   192.168.42.134:3306  │ │
+│  │  │ PHP 5.6         │    │  │   10.10.20.11:3306     │ │
 │  │  └─────────────────┘    │  │                        │ │
 │  │  ┌─────────────────┐    │  │  ┌──────────────────┐  │ │
 │  │  │ UFW Firewall    │    │  │  │ UFW Firewall     │  │ │
 │  │  │ Port 22, 80     │    │  │  │ Port 22 (SSH)    │  │ │
 │  │  └─────────────────┘    │  │  │ Port 3306        │  │ │
-│  └─────────────────────────┘  │  │ (nur von .135)   │  │ │
+│  └─────────────────────────┘  │  │ (nur von .10)    │  │ │
 │                                │  └──────────────────┘  │ │
 │                                └────────────────────────┘ │
 └─────────────────────────────────────────────────────────┘
@@ -215,7 +215,7 @@ Das neue System trennt Web- und Datenbankserver auf zwei separate VMs. Das erhö
 | Webserver | Apache 2.2.15 (EOL) | Apache 2.4.x |
 | PHP | 5.3.3 (EOL) | 5.6 (kompatibel) |
 | Datenbank | MySQL 5.1.73 (EOL) | MariaDB 10.6 |
-| DB-Zugriff | öffentlich (0.0.0.0:3306) | nur intern (.135) |
+| DB-Zugriff | öffentlich (0.0.0.0:3306) | nur intern (10.10.20.10) |
 | Passwörter | schwach (123456) | sicher |
 | Firewall | teilweise, Lücken | UFW klar definiert |
 | Backups | keine | automatisiert |

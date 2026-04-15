@@ -38,7 +38,7 @@ sudo chown -R www-data:www-data /var/www/html/vtigercrm/adminer
 Beim Versuch, sich mit den MariaDB-Daten einzuloggen:
 
 ```
-Server: 192.168.42.134
+Server: 10.10.20.11
 Benutzer: vtigeruser
 Passwort: ****
 Datenbank: vtiger
@@ -46,7 +46,7 @@ Datenbank: vtiger
 
 Fehlermeldung: `SQLSTATE[HY000] [1045] Access denied for user 'vtigeruser'@'...'`
 
-**Ursache:** Der PHP-Request vom Webserver geht als `192.168.42.135` raus, aber der MariaDB-User war auf genau diese IP beschränkt. Das stimmte eigentlich nach erneutem Test funktionierte es. Ich habe mich einfach einige male beim pw vertippt.
+**Ursache:** Der PHP-Request vom Webserver geht als `10.10.20.10` raus, aber der MariaDB-User war auf genau diese IP beschränkt. Das stimmte eigentlich nach erneutem Test funktionierte es. Ich habe mich einfach einige male beim pw vertippt.
 
 ---
 
@@ -57,7 +57,7 @@ http://crm.local/adminer
 ```
 
 Login-Felder:
-- **Server:** `192.168.42.134` (oder `crm-db.local`)
+- **Server:** `10.10.20.11` (oder `crm-db.local`)
 - **Benutzer:** `vtigeruser`
 - **Passwort:** (gesetzt beim DB-Setup)
 - **Datenbank:** `vtiger`
@@ -104,30 +104,30 @@ Jetzt erscheint beim Aufruf von `/adminer` ein Browser-Login-Dialog.
 ### Datenbank exportieren (vom Webserver aus)
 
 ```bash
-mysqldump -h 192.168.42.134 -u vtigeruser -p vtiger > /tmp/vtiger_migration.sql
+mysqldump -h 10.10.20.11 -u vtigeruser -p vtiger > /tmp/vtiger_migration.sql
 ```
 
 Prüfung der Datei:
 
 ```bash
 ls -lh /tmp/vtiger_migration.sql
-# -rw-r--r-- 1 noah noah 4.2M Mär 10 17:32 /tmp/vtiger_migration.sql
+# -rw-r--r-- 1 administrator administrator 4.2M Mär 10 17:32 /tmp/vtiger_migration.sql
 
 head -20 /tmp/vtiger_migration.sql
 # -- MariaDB dump ...
-# -- Host: 192.168.42.134    Database: vtiger
+# -- Host: 10.10.20.11    Database: vtiger
 ```
 
 ### Datenbank importieren
 
 ```bash
-mysql -h 192.168.42.134 -u vtigeruser -p vtiger < /tmp/vtiger_migration.sql
+mysql -h 10.10.20.11 -u vtigeruser -p vtiger < /tmp/vtiger_migration.sql
 ```
 
 Ergebnis prüfen:
 
 ```bash
-mysql -h 192.168.42.134 -u vtigeruser -p vtiger -e "SHOW TABLES;" | wc -l
+mysql -h 10.10.20.11 -u vtigeruser -p vtiger -e "SHOW TABLES;" | wc -l
 # 147
 ```
 
